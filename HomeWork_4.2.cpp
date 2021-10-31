@@ -3,6 +3,7 @@
 #include<cassert>
 #include <algorithm>
 
+
 using namespace std;
 
 class ArInt {
@@ -73,7 +74,7 @@ int main()
 {
 	ArInt arr(10);
 	cout << "Array size: " << arr.size() << endl;
-	for (size_t i = 0; i < 10; i++) {
+	for (int i = 0; i < 10; i++) {
 		arr[i] = 10 - i;
 	};
 	cout << "not sort: ";
@@ -82,10 +83,25 @@ int main()
 	arr.a_sort();
 	cout << "while sort: ";
 	arr.print();
+	cout << endl;
 	
-	vector<int> v{1, 2, 4, 4, 5, 6, 6, 6, 6, 3, 8, 10, 20, 20};
+	vector<int> v{10, 2, 4, 4, 5, 6, 6, 6, 6, 3, 8, 10, 20, 20, 30, 60, 4, 6, 23, 543};
+	sort(v.begin(), v.end());
+	for (int g = 0; g < v.size(); g++) {
+		cout << v[g] << " ";
+	};
+	int a, b = 1;
+	for (long i = 0; i < v.size(); i++) {
+		a = v[i];
+		if (a != v[i++]) {
 
-
+		}
+		else {
+			b++;
+		};
+	};
+	cout << endl;
+	cout << "Individual elements: " << b << endl;
 
 	return 0;
 };
