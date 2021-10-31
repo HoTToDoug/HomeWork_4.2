@@ -101,7 +101,7 @@ int main()
 		};
 	};
 	cout << endl;
-	cout << "Individual elements: " << b << endl;
+	cout << "Individual elements:  " << b << endl;
 
 	return 0;
 };
