@@ -41,37 +41,51 @@ public:
 		};
 	};
 	int a_sort() {
-		for (int i = 0; i < (m_lenght - 1); ++i) {
+		for (int i = 0; i < m_lenght - 1; ++i) {
 			
 			int smallestIndex = i;
 
 			for (int a = i + 1; a < m_lenght; a++) {
 				
-				if (m_data[a] < m_data[smallestIndex]);
+				if (m_data[a] < m_data[smallestIndex]) {
+					smallestIndex = a;
+				};
 
-				smallestIndex = a;
+				
 			};
 
 			swap(m_data[i], m_data[smallestIndex]);
 		};
+		return 0;
 	};
 	int print() {
 		for (int i = 0; i < m_lenght; i++) {
 			if (m_data[i] != 0) {
-				cout << m_data[i];
+				
 			};
+			cout << m_data[i] << ", ";
 		};
+		return 0;
 	};
 };
 
 int main()
 {
 	ArInt arr(10);
-	cout << arr.size() << endl;
+	cout << "Array size: " << arr.size() << endl;
 	for (size_t i = 0; i < 10; i++) {
-		arr[i] = i;
+		arr[i] = 10 - i;
 	};
+	cout << "not sort: ";
 	arr.print();
+	cout << endl;
+	arr.a_sort();
+	cout << "while sort: ";
+	arr.print();
+	
+	vector<int> v{1, 2, 4, 4, 5, 6, 6, 6, 6, 3, 8, 10, 20, 20};
+
+
 
 	return 0;
 };
